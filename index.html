@@ -8,11 +8,34 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Start menu container, thats shown -->
     <div class="wrapper">
-        <div id="home" class="flex-column flex center">
-            <h1>Quiz</h1>
+        <div id="start-menu" class="start">
+            <h1>SpongBob SquarePants Trivia!</h1>
+            <p>
+                Earn the crown of Bikini Bottom! See if you're an expert of the show.
+                Careful, incorrect answers deducts ten seconds off the BobClock.
+                May the best sea creature win!
+            </p>
+            <button id="start">I'm ready!</button>
         </div>
     </div>
-    
+    <!-- Container thats hidden, for questions -->
+    <div id="questions" class="hide">
+        <h2 id="question-title"></h2>
+            <div id="choices" class="choices"></div>        
+    </div>
+    <!-- Last page with inputing Highscore -->
+    <div id="finished-page" class="hide"></div>
+    <h2>You finished!</h2>
+    <p>Your final score is <span id="final-score"></span>.</p>
+    <p>
+        Enter initials: <input type="text" id="initials" max="3" />
+        <button id="submit">Submit</button>
+    </p>
+
+    <!-- Bob clock = Timer -->
+    <div class="timer">BobClock: <span id="time">0</span></div>
+    <script src="assets/js/questions.js"></script>
 </body>
 </html>

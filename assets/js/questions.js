@@ -1,3 +1,4 @@
+// Listed question, choices, and answer
 var questions = [
     {
         title: "Who is SpongeBob's best friend?",
@@ -30,3 +31,5 @@ var questions = [
         answer: "Tom Kenny"
     }
 ]
+
+console.log(questions.length)
