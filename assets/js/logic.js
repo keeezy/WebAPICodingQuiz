@@ -1,6 +1,6 @@
 // Quiz state variables
 var timeLeft = 90
-var timer
+var timer;
 // time = 90 seconds
 var currentQuestionIndex = 0
 
@@ -21,7 +21,8 @@ function startQuiz() {
     // console.log(questionsEl) verified class attribute was removed
 
     // start timeclock
-
+    timer = setInterval(clockCount,1000)
+    timer.textContent = timeLeft;
 
 }
 
