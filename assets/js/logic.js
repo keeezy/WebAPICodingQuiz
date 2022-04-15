@@ -1,5 +1,6 @@
 // Quiz state variables
 var timeLeft = 90
+var timer
 // time = 90 seconds
 var currentQuestionIndex = 0
 
@@ -16,8 +17,24 @@ function startQuiz() {
     //start menu is hidden
     startMenuEl.setAttribute("class", "hide");
     
-    
+    questionsEl.removeAttribute("class")
+    // console.log(questionsEl) verified class attribute was removed
+
+    // start timeclock
+
+
 }
 
+// Clock count function
+function clockCount() {
+    // update time
+    timeLeft--;
+    timeEl.textContent = timeLeft
+
+    // user ran out of time, quiz ends
+    if (timeLeft <= 0) {
+        quizEnd();
+    }
+}
 
 startBtn.onclick = startQuiz;
