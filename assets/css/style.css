@@ -1,10 +1,10 @@
 /* Importated SpongeBob font from googlefonts */
-@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Slackey', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 120%;
 }
 
@@ -23,3 +23,21 @@
     top: 10px;
     right: 10px;
   }
+
+#questions {
+    text-align: center;
+    justify-content: center;
+
+}
+
+button {
+    display: inline;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #26b9c8;
+    border-radius: 20px;
+    padding: 10px;
+    color: #fff56c;
+}
+
+

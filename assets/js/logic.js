@@ -47,38 +47,49 @@ function showQuestion() {
     
     //clears old questions
     choicesEl.innerHTML = "",
-
+    
     //loop choices
     currentQ.choices.forEach(function(choice) {
         // create a button
         var choiceNode = document.createElement("button");
         choiceNode.setAttribute("class", "choice");
         choiceNode.setAttribute("value", choice);
-
+        
         choiceNode.textContent = choice;
-
+        
         choiceNode.onclick = questionClick;
-
+        
         choicesEl.appendChild(choiceNode);
     });
     
+    
+}
 
+// Correct function
+function correctAnswer() {
+    alert ("Correct!!!!");
+    currentQuestionIndex++;
+}
+
+// incorrect function
+function incorrectAnswer() {
+    alert ("Wrong!!!!!!")
 }
 
 function questionClick() {
     if (this.value === questions[currentQuestionIndex].answer) {
-        alert ("correct!!!!");
+        correctAnswer();        
     } else {
-        alert ("incorrect!!!!")
+        incorrectAnswer();
         timeLeft -=10;
         
         
-        }
+    }
     
-
     
-    currentQuestionIndex++;
-
+    
+    
+    
     if (currentQuestionIndex === questions.length) {
         triviaEnd();
     } else {
@@ -101,6 +112,7 @@ function clockCount() {
         triviaEnd();
     }
 }
+
 
 // Function for trivia to end
 function triviaEnd () {
