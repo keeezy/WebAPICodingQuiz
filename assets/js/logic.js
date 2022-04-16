@@ -13,8 +13,8 @@ var questionsEl = document.querySelector(".hide")
 var startMenuEl = document.getElementById("start-menu")
 var finalMenuEl = document.getElementById("final-page")
 var initalsEl = document.getElementById("initials")
-
-
+var correctEl = document.getElementById("correct-answer")
+var incorrectEl = document.getElementById("incorrect-answer")
 
 // Function to start trivia
 function startQuiz() {
@@ -67,13 +67,22 @@ function showQuestion() {
 
 // Correct function
 function correctAnswer() {
-    alert ("Correct!!!!");
+    correctEl.removeAttribute("class")
+    setTimeout(function() {
+    correctEl.setAttribute("class", "hide");
+    }, 1000)
+    
     currentQuestionIndex++;
+    
+    
 }
 
 // incorrect function
 function incorrectAnswer() {
-    alert ("Wrong!!!!!!")
+    incorrectEl.removeAttribute("class")
+    setTimeout(function() {
+        incorrectEl.setAttribute("class", "hide");
+        }, 1000)
 }
 
 function questionClick() {

@@ -32,3 +32,18 @@ var questions = [
     }
 ]
 
+// feedBackElement.textContent = "Correct!";
+// feedBackElement.setAttribute("class", "feedback");
+// setTimeout(function () {
+//     feedBackElement.setAttribute("class", "feedback hide");
+// }, 1000);
+
+// }
+
+// function incorrectFeedback() {
+// feedBackElement.textContent = "Incorrect!";
+// feedBackElement.setAttribute("class", "feedback");
+// setTimeout(function () {
+//     feedBackElement.setAttribute("class", "feedback hide");
+// }, 1000);
+// }
