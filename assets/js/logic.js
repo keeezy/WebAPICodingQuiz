@@ -11,6 +11,7 @@ var timeEl = document.getElementById("time");
 var choicesEl = document.querySelector(".choices")
 var questionsEl = document.querySelector(".hide")
 var startMenuEl = document.getElementById("start-menu")
+var finalMenuEl = document.getElementById("final-page")
 var initalsEl = document.getElementById("initials")
 
 
@@ -79,13 +80,15 @@ function questionClick() {
     currentQuestionIndex++;
 
     if (currentQuestionIndex === questions.length) {
-        quizEnd();
+        triviaEnd();
     } else {
         showQuestion();
     }
 
 
 }
+
+
 
 // Clock count function
 function clockCount() {
@@ -95,9 +98,22 @@ function clockCount() {
 
     // user ran out of time, quiz ends
     if (timeLeft <= 0) {
-        quizEnd();
+        triviaEnd();
     }
 }
+
+// Function for trivia to end
+function triviaEnd () {
+    //stops bobclock when finished
+    clearInterval(timer)
+
+    // Set attribute class to nothing, for final menu to show
+    finalMenuEl.setAttribute("class","")
+
+    // Set attribute class to 'hide' for questions to be hidden
+    questionsEl.setAttribute("class", "hide");
+}
+
 
 startBtn.onclick = startQuiz;
 console.log(showQuestion)
