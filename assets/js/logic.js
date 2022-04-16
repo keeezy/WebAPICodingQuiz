@@ -20,87 +20,87 @@ var incorrectEl = document.getElementById("incorrect-answer")
 function startQuiz() {
     //start menu is hidden
     startMenuEl.setAttribute("class", "hide");
-    
+
     questionsEl.removeAttribute("class")
     // console.log(questionsEl) verified class attribute was removed
 
     // start timeclock
-    timer = setInterval(clockCount,1000)
+    timer = setInterval(clockCount, 1000)
     timer.textContent = timeLeft;
-    
+
     showQuestion();
 }
 
 // Function to show questions
 function showQuestion() {
-    
-    
+
+
     // Current question in array
     var currentQ = questions[currentQuestionIndex];
-    
+
     // Title with current question is shown
     var titleEl = document.getElementById("question-title");
-    
+
     // created variable title element, pulling title from questions array object
     // text content changes to current question title using dot notation
     titleEl.textContent = currentQ.title;
-    
+
     //clears old questions
     choicesEl.innerHTML = "",
-    
-    //loop choices
-    currentQ.choices.forEach(function(choice) {
-        // create a button
-        var choiceNode = document.createElement("button");
-        choiceNode.setAttribute("class", "choice");
-        choiceNode.setAttribute("value", choice);
-        
-        choiceNode.textContent = choice;
-        
-        choiceNode.onclick = questionClick;
-        
-        choicesEl.appendChild(choiceNode);
-    });
-    
-    
+
+        //loop choices
+        currentQ.choices.forEach(function (choice) {
+            // create a button
+            var choiceNode = document.createElement("button");
+            choiceNode.setAttribute("class", "choice");
+            choiceNode.setAttribute("value", choice);
+
+            choiceNode.textContent = choice;
+
+            choiceNode.onclick = questionClick;
+
+            choicesEl.appendChild(choiceNode);
+        });
+
+
 }
 
 // Correct function
 function correctAnswer() {
     correctEl.removeAttribute("class")
     // feedback function for correct answer, spongebob is shown for correct answer
-    setTimeout(function() {
-    correctEl.setAttribute("class", "hide");
+    setTimeout(function () {
+        correctEl.setAttribute("class", "hide");
     }, 700)
-    
+
     currentQuestionIndex++;
-    
-    
+
+
 }
 
 // incorrect function
 function incorrectAnswer() {
     incorrectEl.removeAttribute("class")
     // feedback function for wrong answer, squidward is shown for incorrect answer
-    setTimeout(function() {
+    setTimeout(function () {
         incorrectEl.setAttribute("class", "hide");
-        }, 700)
+    }, 700)
 }
 
 function questionClick() {
     if (this.value === questions[currentQuestionIndex].answer) {
-        correctAnswer();        
+        correctAnswer();
     } else {
         incorrectAnswer();
-        timeLeft -=10;
-        
-        
+        timeLeft -= 10;
+
+
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     if (currentQuestionIndex === questions.length) {
         triviaEnd();
     } else {
@@ -126,12 +126,12 @@ function clockCount() {
 
 
 // Function for trivia to end
-function triviaEnd () {
+function triviaEnd() {
     //stops bobclock when finished
     clearInterval(timer)
 
     // Set attribute class to nothing, for final menu to show
-    finalMenuEl.setAttribute("class","")
+    finalMenuEl.setAttribute("class", "")
 
     // Set attribute class to 'hide' for questions to be hidden
     questionsEl.setAttribute("class", "hide");
