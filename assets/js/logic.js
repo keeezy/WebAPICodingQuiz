@@ -68,6 +68,7 @@ function showQuestion() {
 // Correct function
 function correctAnswer() {
     correctEl.removeAttribute("class")
+    // feedback function for correct answer, spongebob is shown for correct answer
     setTimeout(function() {
     correctEl.setAttribute("class", "hide");
     }, 1000)
@@ -80,6 +81,7 @@ function correctAnswer() {
 // incorrect function
 function incorrectAnswer() {
     incorrectEl.removeAttribute("class")
+    // feedback function for wrong answer, squidward is shown for incorrect answer
     setTimeout(function() {
         incorrectEl.setAttribute("class", "hide");
         }, 1000)

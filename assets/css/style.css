@@ -6,6 +6,11 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 120%;
+    
+}
+
+body {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(255,200,124,1) 0%, rgba(252,251,121,1) 90% );
 }
 
 /* styles start container */
@@ -38,6 +43,10 @@ button {
     border-radius: 20px;
     padding: 10px;
     color: #fff56c;
+}
+
+button:hover {
+    background-color: #26b8c8c8; 
 }
 
 .wrapper-2 {
