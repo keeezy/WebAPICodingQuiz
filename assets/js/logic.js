@@ -71,7 +71,7 @@ function correctAnswer() {
     // feedback function for correct answer, spongebob is shown for correct answer
     setTimeout(function() {
     correctEl.setAttribute("class", "hide");
-    }, 1000)
+    }, 700)
     
     currentQuestionIndex++;
     
@@ -84,7 +84,7 @@ function incorrectAnswer() {
     // feedback function for wrong answer, squidward is shown for incorrect answer
     setTimeout(function() {
         incorrectEl.setAttribute("class", "hide");
-        }, 1000)
+        }, 700)
 }
 
 function questionClick() {

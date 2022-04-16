@@ -16,6 +16,7 @@ body {
 /* styles start container */
 .start {
     text-align: center;
+    
 }
 
 /* Hide containers */
@@ -25,7 +26,7 @@ body {
 /* styles timer */
 .timer {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px;
   }
 
@@ -35,6 +36,11 @@ body {
 
 }
 
+.wrapper {
+    margin: 100px auto 0 auto;
+    
+  }
+
 button {
     display: inline;
     margin: 10px;
@@ -43,6 +49,11 @@ button {
     border-radius: 20px;
     padding: 10px;
     color: #fff56c;
+    font-size: 100%;
+}
+
+.choice button {
+    display: block;
 }
 
 button:hover {
