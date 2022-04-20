@@ -111,6 +111,32 @@ function questionClick() {
 }
 
 
+function saveHighscore() {
+    // Input intitials, trim to cut space after initial input
+    var initials = initalsEl.value.trim();
+
+    if (initials !== "") {
+        // displays scores
+        var highScores =
+            JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+        var newScore = {
+            score: timeLeft,
+            initials: initials
+        };
+
+        highScores.push(newScore);
+        window.localStorage.setItem("highscores", JSON.stringify(highScores));
+
+        window.location.href = "highscores.html";
+
+
+    }
+}
+
+
+
+
 
 // Clock count function
 function clockCount() {
@@ -133,11 +159,23 @@ function triviaEnd() {
     // Set attribute class to nothing, for final menu to show
     finalMenuEl.setAttribute("class", "")
 
+    var finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textContent = timeLeft;
+
     // Set attribute class to 'hide' for questions to be hidden
     questionsEl.setAttribute("class", "hide");
 }
 
+function checkForEnter(event) {
+    // "13" represents the enter key
+    if (event.key === "Enter") {
+        saveHighscore();
+    }
+}
 
+
+
+submitBtn.onclick = saveHighscore;
 startBtn.onclick = startQuiz;
 console.log(showQuestion)
 
